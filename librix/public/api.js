@@ -3,7 +3,7 @@
 // On static hosting (GitHub Pages) there is no server, so the same API is served from
 // localStorage, with the same validation and lending rules as server.js.
 (() => {
-  const KEY = 'librix-data-v1';
+  const KEY = 'librix-data-v2';
   const SEED = { // 32 famous titles from novels, non-fiction, manga, manhwa and comics
     books: [
       ["Harry Potter and the Philosopher's Stone", "J.K. Rowling"],
