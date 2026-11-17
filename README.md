@@ -40,8 +40,9 @@ GitHub Pages serves static files only, so the Node/SQLite server cannot run ther
 `localStorage` backend with the same validation and lending rules. Changes you make on
 the live site are saved **in your own browser only** — they are not uploaded anywhere.
 
-The first-run demo catalogue contains **32 famous titles** — novels, non-fiction, manga,
-manhwa and comics — with anonymized demo members. Real names and phone numbers from the
+The first-run demo catalogue contains the **27 titles supplied for the demo** — novels,
+manga, manhwa and comics — with anonymized demo members. The full list is rendered directly
+on the landing page (`#shelf`) as well as in the app. Real names and phone numbers from the
 original `.txt` files and database are excluded from this repository. Edit `SEED.books` in
 `librix/public/api.js` (and copy it to `docs/api.js`) to change the starting catalogue.
 

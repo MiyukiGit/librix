@@ -18,9 +18,10 @@ On first start, LIBRIX creates `librix.db` and imports the records from the C++ 
 `../*.txt` files (books, authors, borrow status, members). The `.txt` files are only read, never changed.
 To start over with an empty or re-imported database, stop the server and delete `librix.db`.
 
-On GitHub Pages there is no server, so `public/api.js` seeds the browser with 32 famous titles
-(novels, non-fiction, manga, manhwa and comics) and anonymized demo members. Edit `SEED.books`
-there to change the starting catalogue for both the landing page and the app.
+On GitHub Pages there is no server, so `public/api.js` seeds the browser with the 27 supplied
+titles (novels, manga, manhwa and comics) and anonymized demo members. `landing.js` renders the
+whole catalogue in the `#shelf` section of the landing page. Edit `SEED.books` in `public/api.js`
+to change the starting catalogue for both the landing page and the app.
 
 Run the tests with `npm test`.
 
