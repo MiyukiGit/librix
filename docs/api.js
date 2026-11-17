@@ -3,7 +3,7 @@
 // On static hosting (GitHub Pages) there is no server, so the same API is served from
 // localStorage, with the same validation and lending rules as server.js.
 (() => {
-  const KEY = 'librix-data-v3';
+  const KEY = 'librix-data-v4';
   const SEED = { // the 27 titles supplied for the demo: novels, manga, manhwa and comics
     books: [
       ["Pride and Prejudice", "Jane Austen"],
