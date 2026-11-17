@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIBRIX</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+    <symbol id="i-return" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  </svg>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="./" title="Back to the LIBRIX home page"><img src="logo.png" alt="LIBRIX" width="104" height="26"></a>
+      <nav class="nav" aria-label="Main">
+        <span class="nav-label">Overview</span>
+        <a href="#/dashboard" data-page="dashboard"><svg class="i"><use href="#i-grid"/></svg>Dashboard</a>
+        <span class="nav-label">Catalogue</span>
+        <a href="#/books" data-page="books"><svg class="i"><use href="#i-book"/></svg>Books</a>
+        <span class="nav-label">People</span>
+        <a href="#/members" data-page="members"><svg class="i"><use href="#i-users"/></svg>Members</a>
+        <span class="nav-label">Circulation</span>
+        <a href="#/circulation" data-page="circulation"><svg class="i"><use href="#i-swap"/></svg>Loans &amp; returns</a>
+      </nav>
+      <p class="sidebar-foot"><span class="dot"></span><span id="storage">Data saved</span></p>
+    </aside>
+    <div class="backdrop" data-action="close-nav"></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button type="button" class="icon-btn only-mobile" data-action="toggle-nav" aria-label="Open menu"><svg class="i"><use href="#i-menu"/></svg></button>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="./">LIBRIX</a><span aria-hidden="true">/</span><span id="crumb" aria-current="page">Dashboard</span></nav>
+        <button type="button" class="btn primary sm" data-action="issue"><svg class="i"><use href="#i-out"/></svg>Issue book</button>
+      </header>
+      <main id="view" class="view"></main>
+    </div>
+  </div>
+
+  <dialog id="modal" aria-labelledby="modal-title">
+    <form id="modal-form">
+      <header class="modal-head">
+        <h2 id="modal-title"></h2>
+        <button type="button" class="icon-btn" data-action="close-modal" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+      </header>
+      <div class="modal-body" id="modal-body"></div>
+      <p class="form-error" id="modal-error" role="alert" hidden></p>
+      <footer class="modal-foot">
+        <button type="button" class="btn" data-action="close-modal">Cancel</button>
+        <button type="submit" class="btn primary" id="modal-submit">Save</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

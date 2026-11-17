@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIBRIX — Library management</title>
+  <meta name="description" content="LIBRIX keeps a library's catalogue, members and loans in one quiet place.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-logo" href="./" aria-label="LIBRIX home"><img src="logo.png" alt="LIBRIX" width="120" height="30"></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#ledger">Ledger</a>
+      <a href="#method">Method</a>
+      <a href="app.html#/books">Catalogue</a>
+      <a href="app.html#/circulation">Loans</a>
+    </nav>
+    <a class="btn ink" href="app.html"><span class="dot"></span>Open LIBRIX</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow rise" style="--d:.05s">Library system &nbsp;·&nbsp; Est. C++ &nbsp;·&nbsp; Now on the web</p>
+        <h1 class="rise" style="--d:.15s">A library is the stories you choose to <em>keep</em>.</h1>
+        <p class="lede rise" style="--d:.3s">Catalogue every title, register every reader, and know where each book is. Lending and returns are recorded the moment they happen.</p>
+        <div class="cta rise" style="--d:.42s">
+          <a class="btn ink" href="app.html"><span class="dot"></span>Open the library</a>
+          <a class="btn line" href="app.html#/books">Browse catalogue</a>
+        </div>
+      </div>
+
+      <div class="stage" aria-hidden="true">
+        <span class="word top">LIBR</span>
+        <figure class="subject">
+          <span class="book back"><img src="cover-hp.jpg" alt="" width="560" height="800"></span>
+          <span class="book front"><img src="cover-tbate.jpg" alt="" width="560" height="896"></span>
+        </figure>
+        <span class="word bottom">I<svg class="x" viewBox="0 0 104 140" aria-hidden="true"><polygon points="2,0 36,0 104,140 70,140" fill="currentColor"/><path class="sw" d="M-2 140 C 26 96, 58 34, 124 -6 C 84 26, 56 74, 30 140 Z" fill="#97341a"/></svg></span>
+      </div>
+
+      <dl class="hero-meta rise" style="--d:.6s">
+        <div><dt>Model</dt><dd>Books · Members · Loans</dd></div>
+        <div><dt>Storage</dt><dd id="storage">SQLite or your browser</dd></div>
+      </dl>
+    </section>
+
+    <section class="readout" id="ledger">
+      <div class="section-label"><span>01 — Ledger</span><i></i></div>
+      <p class="readout-title reveal">Today, in the stacks.</p>
+      <div class="readout-row reveal" data-stats>
+        <div><b data-k="books">—</b><span>Titles</span></div>
+        <div><b data-k="available">—</b><span>On the shelf</span></div>
+        <div><b data-k="borrowed">—</b><span>On loan</span></div>
+        <div><b data-k="members">—</b><span>Members</span></div>
+      </div>
+      <p class="readout-note" data-note>Live from the library database.</p>
+    </section>
+
+    <section class="spec" id="method">
+      <div class="section-label"><span>02 — Method</span><i></i></div>
+      <div class="spec-grid">
+        <p class="spec-title reveal">Four ledgers,<br><em>one</em> source of truth.</p>
+        <ol class="spec-list">
+          <li class="reveal"><span class="k">Catalogue</span><span class="v">Add, edit, search and retire titles by title or author.</span><a href="app.html#/books">Books →</a></li>
+          <li class="reveal"><span class="k">Members</span><span class="v">Every reader has a unique ID. Phone numbers keep their leading zeros.</span><a href="app.html#/members">Members →</a></li>
+          <li class="reveal"><span class="k">Lending</span><span class="v">A book is lent to one reader at a time. Unknown IDs are refused.</span><a href="app.html#/circulation">Issue →</a></li>
+          <li class="reveal"><span class="k">Returns</span><span class="v">Returning a book puts it back on the shelf and closes the record.</span><a href="app.html#/circulation">History →</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="closer">
+      <p class="closer-word reveal">Keep<br><em>reading.</em></p>
+      <a class="btn ink lg" href="app.html"><span class="dot"></span>Open LIBRIX</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <img src="logo.png" alt="LIBRIX" width="88" height="22">
+    <span>Ported from the original C++ library system.</span>
+    <span class="mono" data-clock></span>
+  </footer>
+
+  <script src="api.js"></script>
+  <script src="landing.js"></script>
+</body>
+</html>

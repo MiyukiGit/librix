@@ -1,0 +1,16 @@
+# Compiled binaries and local databases
+*.exe
+*.db
+
+# Legacy C++ data files (contain real names/phone numbers)
+/booklog.txt
+/authorslog.txt
+/borrowlog.txt
+/IDlog.txt
+/namelog.txt
+/phoneNumlog.txt
+
+# Dependencies and OS files
+node_modules/
+.DS_Store
+Thumbs.db
